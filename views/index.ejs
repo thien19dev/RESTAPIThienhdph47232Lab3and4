@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nhập thông tin ô tô</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Nhập Thông Tin Ô Tô</h1>
+    <form id="carForm" action="/api/cars" method="POST">
+      <label for="carId">Mã Xe:</label><br>
+      <input type="text" id="carId" name="carId" required><br><br>
+
+      <label for="carColor">Màu Xe:</label><br>
+      <input type="text" id="carColor" name="carColor" required><br><br>
+
+      <label for="carPrice">Giá Xe:</label><br>
+      <input type="number" id="carPrice" name="carPrice" required><br><br>
+
+      <button type="submit">Gửi</button>
+    </form>
+
+    <script>
+      document.getElementById("carForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const carData = {
+          carId: document.getElementById("carId").value,
+          carColor: document.getElementById("carColor").value,
+          carPrice: document.getElementById("carPrice").value
+        };
+
+        fetch("/api/cars", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(carData)
+        })
+                .then(response => response.json())
+                .then(data => {
+                  alert("Thông tin ô tô đã được lưu thành công!");
+                  console.log(data);
+                })
+                .catch(error => {
+                  console.error("Error:", error);
+                });
+      });
+    </script>
+  </body>
+</html>
