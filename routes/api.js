@@ -20,7 +20,7 @@ router.post('/add-car', (req, res) => {
 });
 
 
-router.get('/api/cars', (req, res) => {
+router.get('/get-list-car', (req, res) => {
     Car.find()
         .then((result) => {
             res.send(result);
