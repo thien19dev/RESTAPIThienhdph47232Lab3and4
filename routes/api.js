@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const Distributor = require('../models/distributors');
+
 const Car = require('../models/car');
 
 
