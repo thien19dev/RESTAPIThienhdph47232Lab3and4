@@ -19,32 +19,32 @@
       <button type="submit">Gửi</button>
     </form>
 
-    <script>
-      document.getElementById("carForm").addEventListener("submit", function(event) {
-        event.preventDefault();
+<!--    <script>-->
+<!--      document.getElementById("carForm").addEventListener("submit", function(event) {-->
+<!--        event.preventDefault();-->
 
-        const carData = {
-          carId: document.getElementById("carId").value,
-          carColor: document.getElementById("carColor").value,
-          carPrice: document.getElementById("carPrice").value
-        };
+<!--        const carData = {-->
+<!--          carId: document.getElementById("carId").value,-->
+<!--          carColor: document.getElementById("carColor").value,-->
+<!--          carPrice: document.getElementById("carPrice").value-->
+<!--        };-->
 
-        fetch("/api/cars", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(carData)
-        })
-                .then(response => response.json())
-                .then(data => {
-                  alert("Thông tin ô tô đã được lưu thành công!");
-                  console.log(data);
-                })
-                .catch(error => {
-                  console.error("Error:", error);
-                });
-      });
-    </script>
+<!--        fetch("/api/cars", {-->
+<!--          method: "POST",-->
+<!--          headers: {-->
+<!--            "Content-Type": "application/json"-->
+<!--          },-->
+<!--          body: JSON.stringify(carData)-->
+<!--        })-->
+<!--                .then(response => response.json())-->
+<!--                .then(data => {-->
+<!--                  alert("Thông tin ô tô đã được lưu thành công!");-->
+<!--                  console.log(data);-->
+<!--                })-->
+<!--                .catch(error => {-->
+<!--                  console.error("Error:", error);-->
+<!--                });-->
+<!--      });-->
+<!--    </script>-->
   </body>
 </html>

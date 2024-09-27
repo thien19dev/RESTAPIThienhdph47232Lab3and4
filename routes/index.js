@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const Car = require('../model/car');
+const Car = require('../models/car');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
