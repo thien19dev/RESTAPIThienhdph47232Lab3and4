@@ -7,10 +7,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-
-// Them Du Lieu Vao DataBase
-router().post('/addCar', (req, res, next) => {
+// Thêm Dữ Liệu Vào Database
+router.post('/addCar', (req, res, next) => {
   const data = req.body;
+
   const newCar = new Car({
     maXe: data.maXe,
     mauSac: data.mauSac,
@@ -18,11 +18,12 @@ router().post('/addCar', (req, res, next) => {
   });
 
   newCar.save()
-      .then(() =>{
-        res.send("Them thanh cong!")
-      }).catch(err => {
-        res.send("Them that bai" + err);
-  });
+      .then(() => {
+        res.send("Thêm thành công!");
+      })
+      .catch(err => {
+        res.status(500).send("Thêm thất bại: " + err);
+      });
 });
 
 module.exports = router;
