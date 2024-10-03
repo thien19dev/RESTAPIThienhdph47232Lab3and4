@@ -4,7 +4,7 @@ mongoose.set('strictQuery', true);
 
 const local = "mongodb://localhost:27017/cars";
 
-const atlas = "mongodb+srv://thien19dev:Thienhdph47232@thienhdph47232lab3and4.9vydh.mongodb.net/"
+const atlas = "mongodb+srv://thien19dev:Thienhdph47232@thienhdph47232lab3and4.9vydh.mongodb.net/";
 
 
 const connect = async () => {
