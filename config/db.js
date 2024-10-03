@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 mongoose.set('strictQuery', true);
 
-const local = "mongodb://localhost:27017/cars";
+const local = "mongodb://localhost:27017/test/cars";
 
 const atlas = "mongodb+srv://thien19dev:Thienhdph47232@thienhdph47232lab3and4.9vydh.mongodb.net/";
 
