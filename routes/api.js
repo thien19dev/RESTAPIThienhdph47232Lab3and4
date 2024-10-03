@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const Car = require('../models/car');
 
+const Car = require('../models/cars');
 
+//Thêm dữ liệu vào database
 router.post('/add-car', (req, res) => {
     const data = req.body;
     const newCar = new Car({
@@ -19,8 +20,8 @@ router.post('/add-car', (req, res) => {
         });
 });
 
-
-router.get('/cars', (req, res) => {
+//Lấy dữ liệu từ database
+router.get('/get-list-car', (req, res) => {
     Car.find()
         .then((result) => {
             res.send(result);
