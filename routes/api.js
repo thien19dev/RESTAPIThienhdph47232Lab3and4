@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const Car = require('../models/cars');
+const Car = require('../models/car');
 
 //Thêm dữ liệu vào database
 router.post('/add-car', (req, res) => {
