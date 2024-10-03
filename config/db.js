@@ -12,7 +12,7 @@ const connect = async () => {
         await mongoose.connect(atlas);
         console.log('Kết nối MongoDB thành công');
     } catch (error) {
-        console.error('Kết nối MongoDB thất bại:', error);
+        console.error('Kết nối MongoDB thất bại: ', error);
         process.exit(1);
     }
 };
