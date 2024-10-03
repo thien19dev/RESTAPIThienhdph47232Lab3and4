@@ -9,10 +9,7 @@ const atlas = "mongodb+srv://thien19dev:thien19dev@thienhdph47232lab3and4.9vydh.
 
 const connect = async () => {
     try {
-        await mongoose.connect(local, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
+        await mongoose.connect(atlas);
         console.log('Kết nối MongoDB thành công');
     } catch (error) {
         console.error('Kết nối MongoDB thất bại:', error);
